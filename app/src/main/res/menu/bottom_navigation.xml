@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_kasus"
+        android:icon="@drawable/ic_virusmenu"
+        android:title="Kasus" />
+
+    <item android:id="@+id/nav_informasi"
+        android:icon="@drawable/ic_information"
+        android:title="Informasi" />
+
+    <item android:id="@+id/nav_help"
+        android:icon="@drawable/ic_help"
+        android:title="Bantuan" />
+
+</menu>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Pantau COVID</string>
+    <string name="empty">----</string>
+    <string name="card_positif">Positif</string>
+    <string name="card_sembuh">Sembuh</string>
+    <string name="card_meninggal">Meninggal</string>
+    <string name="update_tittle">Update Terbaru</string>
+    <string name="update_time">Data terbaru kasus COVID-19</string>
+    <string name="view_detail">Lihat Detail</string>
+
+    <string-array name="spinner_country">
+        <item>Indonesia</item>
+        <item>Global</item>
+    </string-array>
+</resources>
