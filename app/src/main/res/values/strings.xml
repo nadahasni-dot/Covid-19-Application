@@ -7,6 +7,12 @@
     <string name="update_tittle">Update Terbaru</string>
     <string name="update_time">Data terbaru kasus COVID-19</string>
     <string name="view_detail">Lihat Detail</string>
+    <string name="arrow"><![CDATA[>]]></string>
+    <string name="daftar_kasus_tiap_negara">Daftar kasus tiap Negara</string>
+    <string name="daftar_kasus_tiap_provinsi">Daftar kasus tiap Provinsi</string>
+    <string name="live_data_tiap_negara">Live Data Tiap Negara</string>
+    <string name="tv_negara">Negara</string>
+    <string name="live_data_tiap_provinsi">Live Data Tiap Provinsi</string>
 
     <string-array name="spinner_country">
         <item>Indonesia</item>

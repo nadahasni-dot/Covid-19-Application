@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#1F6D24</color>
     <color name="colorAccent">#FFCA28</color>
     <color name="colorLight">#F2F9F1</color>
-    <color name="orange">#F36212</color>
-    <color name="danger">#E71916</color>
+    <color name="orange">#F5824D</color>
+    <color name="danger">#E43633</color>
+    <color name="darkGrey">#4B4B4B</color>
 </resources>
