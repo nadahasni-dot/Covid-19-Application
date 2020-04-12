@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".KasusJatim"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyLightActionBar"></activity>
+        <activity
             android:name=".KasusProvinsi"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"

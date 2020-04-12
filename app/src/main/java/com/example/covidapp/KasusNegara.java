@@ -13,7 +13,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.method.LinkMovementMethod;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,27 +38,16 @@ import java.util.ArrayList;
 public class KasusNegara extends AppCompatActivity {
     private RequestQueue negaraQueue;
     private RecyclerView negaraRecyclerView;
-    private RecyclerView.Adapter negaraAdapter;
+    private NegaraAdapter negaraAdapter;
     private RecyclerView.LayoutManager negaraLayoutManager;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kasus_negara);
 
-        final ProgressDialog progressDialog = new ProgressDialog(KasusNegara.this);
-        progressDialog.setMessage("Updating data.....");
-        progressDialog.show();
-
-        Handler handler = new Handler(){
-            @Override
-            public void handleMessage(@NonNull Message msg) {
-                super.handleMessage(msg);
-                if(progressDialog.isShowing()){
-                    progressDialog.dismiss();
-                }
-            }
-        };
+        progressDialog = new ProgressDialog(KasusNegara.this);
 
         getSupportActionBar().setTitle("Data Negara");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -61,8 +55,6 @@ public class KasusNegara extends AppCompatActivity {
         negaraQueue = Volley.newRequestQueue(this);
 
         negaraParse();
-
-        handler.sendMessageDelayed(new Message(), 1000);
 
 //        negaraList.add(new NegaraItem("Indo", "100", "100", "100"));
 
@@ -75,11 +67,16 @@ public class KasusNegara extends AppCompatActivity {
     }
 
     private void negaraParse() {
+        progressDialog.setMessage("Updating data.....");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+
         String url = "https://api.kawalcorona.com/";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+                progressDialog.cancel();
                 try {
                     ArrayList<NegaraItem> negaraList = new ArrayList<>();
 
@@ -115,5 +112,31 @@ public class KasusNegara extends AppCompatActivity {
         });
 
         negaraQueue.add(jsonArrayRequest);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setQueryHint("Cari Negara");
+        searchView.setIconifiedByDefault(false);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                negaraAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        return true;
     }
 }
