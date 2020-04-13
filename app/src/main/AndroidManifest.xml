@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_rounded"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        
         <activity
             android:name=".jatim.KasusJatim"
             android:configChanges="orientation|keyboardHidden"

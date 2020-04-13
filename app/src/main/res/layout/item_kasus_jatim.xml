@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="18dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginRight="18dp"
+    android:layout_marginBottom="6dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingTop="9dp"
+    app:cardCornerRadius="30dp">
+
+    <LinearLayout
+        android:id="@+id/tittleTOp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_kota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/semibold"
+            android:paddingLeft="18dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/tv_negara"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="18dp"
+            android:textColor="@color/darkGrey"
+            android:fontFamily="@font/regular"
+            android:id="@+id/odr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ODR"/>
+
+        <TextView
+            android:id="@+id/tv_odr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/semibold"
+            android:text="----"
+            android:textColor="@color/orange" />
+
+        <TextView
+            android:id="@+id/tv_otg"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/tv_odr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/semibold"
+            android:text="----"
+            android:textColor="@color/orange" />
+
+        <TextView
+            android:id="@+id/tv_odp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/tv_otg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/semibold"
+            android:text="----"
+            android:textColor="@color/orange" />
+
+        <TextView
+            android:id="@+id/tv_pdp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/tv_odp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/semibold"
+            android:text="----"
+            android:textColor="@color/orange" />
+
+        <TextView
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/darkGrey"
+            android:fontFamily="@font/regular"
+            android:id="@+id/otg"
+            android:layout_below="@id/odr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OTG"/>
+
+        <TextView
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/darkGrey"
+            android:fontFamily="@font/regular"
+            android:id="@+id/odp"
+            android:layout_below="@id/otg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ODP"/>
+
+        <TextView
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/darkGrey"
+            android:fontFamily="@font/regular"
+            android:id="@+id/pdp"
+            android:layout_below="@id/odp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PDP"/>
+
+        <TextView
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/danger"
+            android:fontFamily="@font/regular"
+            android:id="@+id/positif"
+            android:layout_below="@id/pdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POSITIF"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:textSize="22dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/danger"
+            android:fontFamily="@font/semibold"
+            android:id="@+id/jumlah_positif"
+            android:layout_below="@id/positif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="----"
+            android:gravity="center_horizontal"/>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

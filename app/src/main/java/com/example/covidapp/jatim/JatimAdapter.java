@@ -19,16 +19,20 @@ public class JatimAdapter extends RecyclerView.Adapter<JatimAdapter.JatimViewHol
     public static class JatimViewHolder extends RecyclerView.ViewHolder{
         public TextView textKota;
         public TextView textPositif;
-        public TextView textSembuh;
-        public TextView textMeninggal;
+        public TextView textOdr;
+        public TextView textOtg;
+        public TextView textOdp;
+        public TextView textPdp;
 
         public JatimViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textKota = itemView.findViewById(R.id.tv_negara);
-            textPositif = itemView.findViewById(R.id.tv_positif_negara);
-            textSembuh = itemView.findViewById(R.id.tv_sembuh_negara);
-            textMeninggal = itemView.findViewById(R.id.tv_meninggal_negara);
+            textKota = itemView.findViewById(R.id.tv_kota);
+            textPositif = itemView.findViewById(R.id.jumlah_positif);
+            textOdr = itemView.findViewById(R.id.tv_odr);
+            textOtg = itemView.findViewById(R.id.tv_otg);
+            textOdp = itemView.findViewById(R.id.tv_odp);
+            textPdp = itemView.findViewById(R.id.tv_pdp);
         }
     }
 
@@ -36,10 +40,11 @@ public class JatimAdapter extends RecyclerView.Adapter<JatimAdapter.JatimViewHol
         mJatimList = jatimList;
     }
 
+
     @NonNull
     @Override
     public JatimViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kasus, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kasus_jatim, parent, false);
         JatimViewHolder jvh = new JatimViewHolder(v);
 
         return jvh;
@@ -51,9 +56,12 @@ public class JatimAdapter extends RecyclerView.Adapter<JatimAdapter.JatimViewHol
 
         holder.textKota.setText(currentItem.getKotaTittle());
         holder.textPositif.setText(currentItem.getKotaPositif());
-        holder.textSembuh.setText(currentItem.getKotaSembuh());
-        holder.textMeninggal.setText(currentItem.getKotaMeninggal());
+        holder.textOdr.setText(currentItem.getKotaOdr());
+        holder.textOtg.setText(currentItem.getKotaOtg());
+        holder.textOdp.setText(currentItem.getKotaOdp());
+        holder.textPdp.setText(currentItem.getKotaPdp());
     }
+
 
     @Override
     public int getItemCount() {
