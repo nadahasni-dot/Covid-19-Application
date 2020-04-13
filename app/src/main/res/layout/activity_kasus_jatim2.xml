@@ -7,7 +7,7 @@
     tools:context=".KasusJatimSalah">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/topTittle2"
+        android:id="@+id/topTittle"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/live_data_tiap_provinsi"
+            android:text="Liva Data Jawa Timur"
             android:fontFamily="@font/semibold"
             android:textSize="12sp"
             android:layout_gravity="center"
@@ -26,8 +26,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerProvinsi"
-        android:layout_below="@+id/topTittle2"
+        android:id="@+id/recyclerJatim"
+        android:layout_below="@+id/topTittle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>

@@ -9,8 +9,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,7 +25,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -132,9 +129,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         cardNegara.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(getApplicationContext(), "Sumber Data sedang dalam perbaikan", Toast.LENGTH_LONG).show();
-//                                Intent intent = new Intent(MainActivity.this, KasusJatim.class);
-//                                startActivity(intent);
+                                Intent intent = new Intent(MainActivity.this, KasusJatim.class);
+                                startActivity(intent);
                             }
                         });
                     }
@@ -153,11 +149,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void updateTimeParse() {
+        progressDialog.setMessage("Updating data.....");
+        progressDialog.setCancelable(true);
+        progressDialog.show();
+
         String url = "https://api.kawalcorona.com/";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+                progressDialog.cancel();
+
                 Spinner spinner = findViewById(R.id.country_spinner);
                 ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.spinner_country, android.R.layout.simple_spinner_item);
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -258,8 +260,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         @Override
                         public void onClick(View v) {
                             Toast.makeText(getApplicationContext(), "Sumber Data sedang dalam perbaikan", Toast.LENGTH_LONG).show();
-//                                Intent intent = new Intent(MainActivity.this, KasusJatim.class);
-//                                startActivity(intent);
+                            Intent intent = new Intent(MainActivity.this, KasusJatim.class);
+                            startActivity(intent);
                         }
                     });
 
@@ -276,6 +278,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         mQueue.add(stringRequest);
     }
+
     private void globalParseSembuh() {
         progressDialog.setMessage("Updating data.....");
         progressDialog.setCancelable(true);
@@ -337,9 +340,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     cardNegara.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(getApplicationContext(), "Sumber Data sedang dalam perbaikan", Toast.LENGTH_LONG).show();
-//                                Intent intent = new Intent(MainActivity.this, KasusJatim.class);
-//                                startActivity(intent);
+                            Intent intent = new Intent(MainActivity.this, KasusJatim.class);
+                            startActivity(intent);
                         }
                     });
 
@@ -356,6 +358,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         mQueue.add(stringRequest);
     }
+
     private void globalParseMeninggal() {
         progressDialog.setMessage("Updating data.....");
         progressDialog.setCancelable(true);
@@ -417,9 +420,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     cardNegara.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(getApplicationContext(), "Sumber Data sedang dalam perbaikan", Toast.LENGTH_LONG).show();
-//                                Intent intent = new Intent(MainActivity.this, KasusJatim.class);
-//                                startActivity(intent);
+                            Intent intent = new Intent(MainActivity.this, KasusJatim.class);
+                            startActivity(intent);
                         }
                     });
 
@@ -446,7 +448,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     switch (item.getItemId()) {
                         case R.id.nav_kasus:
-                            jsonParse();
+                            updateTimeParse();
                             selectedFragment = new KasusFragment();
                             break;
                         case R.id.nav_informasi:

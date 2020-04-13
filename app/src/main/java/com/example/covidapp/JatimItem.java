@@ -4,19 +4,15 @@ public class JatimItem {
     private String kotaTittle;
     private String kotaUpdate;
     private String kotaPositif;
-    private String kotaSembuh;
-    private String kotaMeninggal;
     private String kotaOdr;
     private String kotaOtg;
     private String kotaOdp;
     private String kotaPdp;
 
-    public JatimItem(String kotaTittle, String kotaUodate, String kotaPositif, String kotaSembuh, String kotaMeninggal, String kotaOdr, String kotaOtg, String kotaOdp, String kotaPdp) {
+    public JatimItem(String kotaTittle, String kotaUodate, String kotaPositif, String kotaOdr, String kotaOtg, String kotaOdp, String kotaPdp) {
         this.kotaTittle = kotaTittle;
         this.kotaUpdate = kotaUodate;
         this.kotaPositif = kotaPositif;
-        this.kotaSembuh = kotaSembuh;
-        this.kotaMeninggal = kotaMeninggal;
         this.kotaOdr = kotaOdr;
         this.kotaOtg = kotaOtg;
         this.kotaOdp = kotaOdp;
@@ -35,13 +31,13 @@ public class JatimItem {
         return kotaPositif;
     }
 
-    public String getKotaSembuh() {
-        return kotaSembuh;
-    }
-
-    public String getKotaMeninggal() {
-        return kotaMeninggal;
-    }
+//    public String getKotaSembuh() {
+//        return kotaSembuh;
+//    }
+//
+//    public String getKotaMeninggal() {
+//        return kotaMeninggal;
+//    }
 
     public String getKotaOdr() {
         return kotaOdr;
@@ -71,13 +67,13 @@ public class JatimItem {
         this.kotaPositif = kotaPositif;
     }
 
-    public void setKotaSembuh(String kotaSembuh) {
-        this.kotaSembuh = kotaSembuh;
-    }
-
-    public void setKotaMeninggal(String kotaMeninggal) {
-        this.kotaMeninggal = kotaMeninggal;
-    }
+//    public void setKotaSembuh(String kotaSembuh) {
+//        this.kotaSembuh = kotaSembuh;
+//    }
+//
+//    public void setKotaMeninggal(String kotaMeninggal) {
+//        this.kotaMeninggal = kotaMeninggal;
+//    }
 
     public void setKotaOdr(String kotaOdr) {
         this.kotaOdr = kotaOdr;

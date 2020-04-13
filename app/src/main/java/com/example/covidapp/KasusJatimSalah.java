@@ -1,19 +1,18 @@
 package com.example.covidapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -21,7 +20,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class KasusJatim extends AppCompatActivity {
+public class KasusJatimSalah extends AppCompatActivity {
     private RequestQueue jatimQueue;
     private RecyclerView jatimRecyclerView;
     private JatimAdapter jatimAdapter;
@@ -34,7 +33,7 @@ public class KasusJatim extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kasus_jatim2);
 
-        progressDialog = new ProgressDialog(KasusJatim.this);
+        progressDialog = new ProgressDialog(KasusJatimSalah.this);
 
         getSupportActionBar().setTitle("Data Jawa Timur");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -42,14 +41,6 @@ public class KasusJatim extends AppCompatActivity {
         jatimQueue = Volley.newRequestQueue(this);
 
         jatimParse();
-
-        jatimRecyclerView = findViewById(R.id.recyclerJatim);
-        jatimRecyclerView.setHasFixedSize(true);
-        jatimLayoutManager = new LinearLayoutManager(getApplicationContext());
-        jatimAdapter = new JatimAdapter(jatimList);
-
-        jatimRecyclerView.setLayoutManager(jatimLayoutManager);
-        jatimRecyclerView.setAdapter(jatimAdapter);
     }
 
     private void jatimParse() {
@@ -59,13 +50,13 @@ public class KasusJatim extends AppCompatActivity {
 
         String url = "https://nadasthing.000webhostapp.com/";
 
-        StringRequest jsonArrayRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
-            public void onResponse(String response) {
+            public void onResponse(JSONArray response) {
                 progressDialog.cancel();
                 try {
-//                    for (int i = 0; i < 49; i++) {
-                        JSONObject object = new JSONObject(response);
+                    for (int i = 0; i < response.length(); i++) {
+                        JSONObject object = response.getJSONObject(i);
 
                         String namaKota = object.getString("kota");
                         String update = object.getString("uodated_at");
@@ -85,8 +76,15 @@ public class KasusJatim extends AppCompatActivity {
 
                         jatimList.add(new JatimItem(namaKota, update, positf, odr, otg, odp, pdp));
                         Toast.makeText(getApplicationContext(), namaKota, Toast.LENGTH_LONG).show();
+                    }
 
-//                    }
+                    jatimRecyclerView = findViewById(R.id.recyclerJatim);
+                    jatimRecyclerView.setHasFixedSize(true);
+                    jatimLayoutManager = new LinearLayoutManager(getApplicationContext());
+                    jatimAdapter = new JatimAdapter(jatimList);
+
+                    jatimRecyclerView.setLayoutManager(jatimLayoutManager);
+                    jatimRecyclerView.setAdapter(jatimAdapter);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
