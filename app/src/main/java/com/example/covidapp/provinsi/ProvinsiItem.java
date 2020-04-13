@@ -1,4 +1,4 @@
-package com.example.covidapp;
+package com.example.covidapp.provinsi;
 
 public class ProvinsiItem {
     private String provinsiTittle;

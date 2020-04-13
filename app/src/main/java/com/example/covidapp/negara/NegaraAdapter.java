@@ -1,4 +1,4 @@
-package com.example.covidapp;
+package com.example.covidapp.negara;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.covidapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,30 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KasusNegara">
+    tools:context=".negara.KasusNegara">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/topTittle"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        app:cardCornerRadius="0dp"
+        android:layout_alignParentTop="true"
         android:elevation="4dp"
-        >
+        app:cardCornerRadius="0dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/live_data_tiap_negara"
-            android:fontFamily="@font/semibold"
-            android:textSize="12sp"
             android:layout_gravity="center"
-            android:textColor="@color/colorPrimary"/>
+            android:fontFamily="@font/semibold"
+            android:text="@string/live_data_tiap_negara"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp" />
+
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNegara"
-        android:layout_below="@+id/topTittle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topTittle"
+        tools:listitem="@layout/item_kasus" />
+
 </RelativeLayout>

@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/black"
-        android:text="Pantau"
+        android:text="@string/pantau"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/kasus_bg"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/black"
-        android:text="COVID-19"
+        android:text="@string/covid_19"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/kasus_bg"
@@ -60,37 +60,37 @@
             android:id="@+id/country_spinner"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/country_select_bg"
             android:clickable="true"
             android:entries="@array/spinner_country"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"/>
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp" />
 
         <TextView
             android:id="@+id/update_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/country_spinner"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/semibold"
             android:text="@string/update_tittle"
             android:textColor="@color/darkGrey"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/waktuUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/update_text"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/regular"
             android:text="@string/update_time"
-            android:textSize="12dp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/detail_update"
@@ -104,17 +104,16 @@
             android:fontFamily="@font/regular"
             android:text="@string/view_detail"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14dp"
-            />
+            android:textSize="14sp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardKasus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/waktuUpdate"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="8dp"
-            android:layout_marginRight="18dp"
+            android:layout_marginEnd="18dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
@@ -124,6 +123,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:weightSum="3">
 
@@ -141,6 +141,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="18dp"
                         android:layout_marginBottom="8dp"
+                        android:contentDescription="@string/icon_positif"
                         android:src="@drawable/ic_virus" />
 
                     <TextView
@@ -153,7 +154,7 @@
                         android:gravity="center"
                         android:text="@string/empty"
                         android:textColor="@color/orange"
-                        android:textSize="22dp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -162,7 +163,7 @@
                         android:fontFamily="@font/regular"
                         android:text="@string/card_positif"
                         android:textColor="@color/orange"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -180,6 +181,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="18dp"
                         android:layout_marginBottom="8dp"
+                        android:contentDescription="@string/icon_sembuh"
                         android:src="@drawable/ic_heart" />
 
                     <TextView
@@ -192,7 +194,7 @@
                         android:gravity="center"
                         android:text="@string/empty"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="22dp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -201,7 +203,7 @@
                         android:fontFamily="@font/regular"
                         android:text="@string/card_sembuh"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -219,6 +221,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="18dp"
                         android:layout_marginBottom="8dp"
+                        android:contentDescription="@string/icon_meninggal"
                         android:src="@drawable/ic_cross" />
 
                     <TextView
@@ -231,7 +234,7 @@
                         android:gravity="center"
                         android:text="@string/empty"
                         android:textColor="@color/danger"
-                        android:textSize="22dp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -240,10 +243,9 @@
                         android:fontFamily="@font/regular"
                         android:text="@string/card_meninggal"
                         android:textColor="@color/danger"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
-
 
             </LinearLayout>
 
@@ -251,14 +253,14 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_list_negara"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@id/cardKasus"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="18dp"
+            android:layout_marginEnd="18dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp">
 
@@ -269,45 +271,46 @@
 
                 <ImageView
                     android:id="@+id/ic_daftar_negara"
-                    android:layout_alignParentStart="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
                     android:background="@drawable/ic_daftar_negara"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="18dp"/>
+                    android:contentDescription="@string/daftar_kasus_tiap_negara" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
                     android:layout_toEndOf="@+id/ic_daftar_negara"
                     android:fontFamily="@font/regular"
-                    android:text="@string/daftar_kasus_tiap_negara"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="4dp"/>
+                    android:text="@string/daftar_kasus_tiap_negara" />
 
-                <TextView
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/semibold"
-                    android:textColor="@color/colorPrimary"
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/arrow"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="18dp"/>
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="18dp"
+                    android:contentDescription="@string/chevron_right"
+                    android:src="@drawable/ic_chevron_right_primary" />
+
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_list_provinsi"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@id/card_list_negara"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="18dp"
+            android:layout_marginEnd="18dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp">
 
@@ -318,46 +321,45 @@
 
                 <ImageView
                     android:id="@+id/ic_daftar_provinsi"
-                    android:layout_alignParentStart="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
                     android:background="@drawable/ic_daftar_provinsi"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="18dp"/>
+                    android:contentDescription="@string/daftar_kasus_tiap_provinsi" />
 
                 <TextView
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:layout_toEndOf="@+id/ic_daftar_provinsi"
+                    android:fontFamily="@font/regular"
                     android:text="@string/daftar_kasus_tiap_provinsi" />
 
-                <TextView
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/semibold"
-                    android:textColor="@color/colorPrimary"
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/arrow"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="18dp"/>
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="18dp"
+                    android:contentDescription="@string/chevron_right"
+                    android:src="@drawable/ic_chevron_right_primary" />
+
             </RelativeLayout>
-
-
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_list_jatim"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@id/card_list_provinsi"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="18dp"
+            android:layout_marginEnd="18dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp">
 
@@ -368,35 +370,35 @@
 
                 <ImageView
                     android:id="@+id/ic_daftar_jatim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
                     android:background="@drawable/ic_daftar_provinsi"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="18dp"/>
+                    android:contentDescription="@string/daftar_kasus_jawa_timur" />
 
                 <TextView
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:layout_toEndOf="@+id/ic_daftar_jatim"
-                    android:text="Daftar Kasus Jawa Timur" />
+                    android:fontFamily="@font/regular"
+                    android:text="@string/daftar_kasus_jawa_timur" />
 
-                <TextView
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/semibold"
-                    android:textColor="@color/colorPrimary"
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/arrow"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="18dp"/>
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="18dp"
+                    android:contentDescription="@string/chevron_right"
+                    android:src="@drawable/ic_chevron_right_primary" />
+
             </RelativeLayout>
-
-
 
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

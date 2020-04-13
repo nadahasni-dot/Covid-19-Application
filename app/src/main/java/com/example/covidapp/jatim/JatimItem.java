@@ -1,4 +1,4 @@
-package com.example.covidapp;
+package com.example.covidapp.jatim;
 
 public class JatimItem {
     private String kotaTittle;

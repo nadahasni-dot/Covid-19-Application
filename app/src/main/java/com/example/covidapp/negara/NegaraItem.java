@@ -1,4 +1,4 @@
-package com.example.covidapp;
+package com.example.covidapp.negara;
 
 import android.widget.TextView;
 

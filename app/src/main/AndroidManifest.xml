@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.covidapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,29 +13,40 @@
         android:roundIcon="@mipmap/ic_launcher_rounded"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".KasusJatim"
+            android:name=".jatim.KasusJatim"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/MyLightActionBar"></activity>
+            android:theme="@style/MyLightActionBar"
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".KasusProvinsi"
+            android:name=".provinsi.KasusProvinsi"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/MyLightActionBar"></activity>
+            android:theme="@style/MyLightActionBar"
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".KasusNegara"
+            android:name=".negara.KasusNegara"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/MyLightActionBar" />
+            android:theme="@style/MyLightActionBar"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBar">
+            android:theme="@style/NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".SplashScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBar"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
