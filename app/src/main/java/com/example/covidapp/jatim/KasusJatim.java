@@ -1,6 +1,7 @@
 package com.example.covidapp.jatim;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
@@ -18,6 +19,8 @@ import com.example.covidapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class KasusJatim extends AppCompatActivity {
     private RequestQueue jatimQueue;

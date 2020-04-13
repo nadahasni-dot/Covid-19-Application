@@ -14,6 +14,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.covidapp.jatim.JatimAdapter;
+import com.example.covidapp.jatim.JatimItem;
+import com.example.covidapp.provinsi.ProvinsiItem;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -55,24 +58,18 @@ public class KasusJatimSalah extends AppCompatActivity {
             public void onResponse(JSONArray response) {
                 progressDialog.cancel();
                 try {
+                    ArrayList<JatimItem> jatimList = new ArrayList<>();
+
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject object = response.getJSONObject(i);
 
                         String namaKota = object.getString("kota");
-                        String update = object.getString("uodated_at");
+                        String update = object.getString("updated_at");
                         String positf = object.getString("confirm");
                         String odr = object.getString("odr");
                         String otg = object.getString("otg");
                         String odp = object.getString("odp");
                         String pdp = object.getString("pdp");
-
-//                    String namaKota = jatim.getString("kota");
-//                    String update = "tanggal";
-//                    String positf = "99";
-//                    String odr = "1";
-//                    String otg = "2";
-//                    String odp = "3";
-//                    String pdp = "4";
 
                         jatimList.add(new JatimItem(namaKota, update, positf, odr, otg, odp, pdp));
                         Toast.makeText(getApplicationContext(), namaKota, Toast.LENGTH_LONG).show();
@@ -85,6 +82,7 @@ public class KasusJatimSalah extends AppCompatActivity {
 
                     jatimRecyclerView.setLayoutManager(jatimLayoutManager);
                     jatimRecyclerView.setAdapter(jatimAdapter);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

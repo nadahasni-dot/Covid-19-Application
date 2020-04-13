@@ -13,7 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_rounded"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        
+
+        <activity
+            android:name=".KasusJatimSalah"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyLightActionBar"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".jatim.KasusJatim"
             android:configChanges="orientation|keyboardHidden"

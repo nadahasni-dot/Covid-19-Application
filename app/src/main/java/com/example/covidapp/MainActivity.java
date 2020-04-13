@@ -27,6 +27,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.covidapp.jatim.KasusJatim;
 import com.example.covidapp.negara.KasusNegara;
 import com.example.covidapp.provinsi.KasusProvinsi;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         cardNegara.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(MainActivity.this, KasusJatim.class);
+                                Intent intent = new Intent(MainActivity.this, KasusJatimSalah.class);
                                 startActivity(intent);
                             }
                         });
