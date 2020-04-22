@@ -89,6 +89,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/regular"
+            android:paddingBottom="8dp"
             android:text="@string/update_time"
             android:textSize="12sp" />
 
@@ -102,302 +103,365 @@
             android:layout_marginEnd="18dp"
             android:clickable="true"
             android:fontFamily="@font/regular"
+            android:paddingBottom="8dp"
             android:text="@string/view_detail"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardKasus"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/waktuUpdate"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="18dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp">
-
-            <!--            container-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="3">
-
-                <!--                col 1-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingBottom="18dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginBottom="8dp"
-                        android:contentDescription="@string/icon_positif"
-                        android:src="@drawable/ic_virus" />
-
-                    <TextView
-                        android:id="@+id/tv_positif"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/semibold"
-                        android:gravity="center"
-                        android:text="@string/empty"
-                        android:textColor="@color/orange"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/regular"
-                        android:text="@string/card_positif"
-                        android:textColor="@color/orange"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-                <!--                col 2-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingBottom="18dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginBottom="8dp"
-                        android:contentDescription="@string/icon_sembuh"
-                        android:src="@drawable/ic_heart" />
-
-                    <TextView
-                        android:id="@+id/tv_sembuh"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/semibold"
-                        android:gravity="center"
-                        android:text="@string/empty"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/regular"
-                        android:text="@string/card_sembuh"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-                <!--                col 3 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingBottom="18dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginBottom="8dp"
-                        android:contentDescription="@string/icon_meninggal"
-                        android:src="@drawable/ic_cross" />
-
-                    <TextView
-                        android:id="@+id/tv_meninggal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/semibold"
-                        android:gravity="center"
-                        android:text="@string/empty"
-                        android:textColor="@color/danger"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/regular"
-                        android:text="@string/card_meninggal"
-                        android:textColor="@color/danger"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_list_negara"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/cardKasus"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="18dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp">
+            android:layout_below="@id/waktuUpdate">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical">
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/ic_daftar_negara"
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardKasus"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
                     android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="18dp"
-                    android:background="@drawable/ic_daftar_negara"
-                    android:contentDescription="@string/daftar_kasus_tiap_negara" />
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@+id/ic_daftar_negara"
-                    android:fontFamily="@font/regular"
-                    android:text="@string/daftar_kasus_tiap_negara" />
+                    <!--            container-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="4dp"
+                        <!--                col 1-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingBottom="18dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginBottom="8dp"
+                                android:contentDescription="@string/icon_positif"
+                                android:src="@drawable/ic_virus" />
+
+                            <TextView
+                                android:id="@+id/tv_positif"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/semibold"
+                                android:gravity="center"
+                                android:text="@string/empty"
+                                android:textColor="@color/orange"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/regular"
+                                android:text="@string/card_positif"
+                                android:textColor="@color/orange"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <!--                col 2-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingBottom="18dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginBottom="8dp"
+                                android:contentDescription="@string/icon_sembuh"
+                                android:src="@drawable/ic_heart" />
+
+                            <TextView
+                                android:id="@+id/tv_sembuh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/semibold"
+                                android:gravity="center"
+                                android:text="@string/empty"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/regular"
+                                android:text="@string/card_sembuh"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <!--                col 3 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingBottom="18dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginBottom="8dp"
+                                android:contentDescription="@string/icon_meninggal"
+                                android:src="@drawable/ic_cross" />
+
+                            <TextView
+                                android:id="@+id/tv_meninggal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/semibold"
+                                android:gravity="center"
+                                android:text="@string/empty"
+                                android:textColor="@color/danger"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/regular"
+                                android:text="@string/card_meninggal"
+                                android:textColor="@color/danger"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_list_negara"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/cardKasus"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="18dp"
-                    android:contentDescription="@string/chevron_right"
-                    android:src="@drawable/ic_chevron_right_primary" />
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/ic_daftar_negara"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/ic_daftar_negara"
+                            android:contentDescription="@string/daftar_kasus_tiap_negara" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="4dp"
+                            android:layout_toEndOf="@+id/ic_daftar_negara"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/daftar_kasus_tiap_negara" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="18dp"
+                            android:contentDescription="@string/chevron_right"
+                            android:src="@drawable/ic_chevron_right_primary" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_list_provinsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/card_list_negara"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="18dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/ic_daftar_provinsi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/ic_daftar_provinsi"
+                            android:contentDescription="@string/daftar_kasus_tiap_provinsi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_toEndOf="@+id/ic_daftar_provinsi"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/daftar_kasus_tiap_provinsi" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="18dp"
+                            android:contentDescription="@string/chevron_right"
+                            android:src="@drawable/ic_chevron_right_primary" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_list_jatim"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/card_list_provinsi"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="18dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/ic_daftar_jatim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/ic_daftar_provinsi"
+                            android:contentDescription="@string/daftar_kasus_jawa_timur" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_toEndOf="@+id/ic_daftar_jatim"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/daftar_kasus_jawa_timur" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="18dp"
+                            android:contentDescription="@string/chevron_right"
+                            android:src="@drawable/ic_chevron_right_primary" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_list_jember"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/card_list_jatim"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/ic_daftar_jember"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/ic_daftar_provinsi"
+                            android:contentDescription="@string/daftar_kasus_kab_jember" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_toEndOf="@+id/ic_daftar_jember"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/daftar_kasus_kab_jember" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="18dp"
+                            android:contentDescription="@string/chevron_right"
+                            android:src="@drawable/ic_chevron_right_primary" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_list_provinsi"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/card_list_negara"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="18dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:id="@+id/ic_daftar_provinsi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginEnd="18dp"
-                    android:background="@drawable/ic_daftar_provinsi"
-                    android:contentDescription="@string/daftar_kasus_tiap_provinsi" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@+id/ic_daftar_provinsi"
-                    android:fontFamily="@font/regular"
-                    android:text="@string/daftar_kasus_tiap_provinsi" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="18dp"
-                    android:contentDescription="@string/chevron_right"
-                    android:src="@drawable/ic_chevron_right_primary" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_list_jatim"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/card_list_provinsi"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="18dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:id="@+id/ic_daftar_jatim"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginEnd="18dp"
-                    android:background="@drawable/ic_daftar_provinsi"
-                    android:contentDescription="@string/daftar_kasus_jawa_timur" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@+id/ic_daftar_jatim"
-                    android:fontFamily="@font/regular"
-                    android:text="@string/daftar_kasus_jawa_timur" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="18dp"
-                    android:contentDescription="@string/chevron_right"
-                    android:src="@drawable/ic_chevron_right_primary" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
+        </ScrollView>
 
     </RelativeLayout>
 

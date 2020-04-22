@@ -28,6 +28,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.covidapp.jatim.KasusJatim;
+import com.example.covidapp.jember.KasusJember;
 import com.example.covidapp.negara.KasusNegara;
 import com.example.covidapp.provinsi.KasusProvinsi;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -132,7 +133,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         cardNegara.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(MainActivity.this, KasusJatimSalah.class);
+                                Intent intent = new Intent(MainActivity.this, KasusJatim.class);
+                                startActivity(intent);
+                            }
+                        });
+
+                        //                        Membuat klik card jember
+                        cardNegara = findViewById(R.id.card_list_jember);
+
+                        cardNegara.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(MainActivity.this, KasusJember.class);
                                 startActivity(intent);
                             }
                         });

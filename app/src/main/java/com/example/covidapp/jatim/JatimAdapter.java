@@ -12,7 +12,6 @@ import com.example.covidapp.R;
 
 import java.util.ArrayList;
 
-
 public class JatimAdapter extends RecyclerView.Adapter<JatimAdapter.JatimViewHolder> {
     private ArrayList<JatimItem> mJatimList;
 
@@ -61,7 +60,6 @@ public class JatimAdapter extends RecyclerView.Adapter<JatimAdapter.JatimViewHol
         holder.textOdp.setText(currentItem.getKotaOdp());
         holder.textPdp.setText(currentItem.getKotaPdp());
     }
-
 
     @Override
     public int getItemCount() {

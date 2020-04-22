@@ -1,4 +1,4 @@
-package com.example.covidapp.jatim;
+package com.example.covidapp.jember;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,64 +20,62 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class KasusJatim extends AppCompatActivity {
-    private RequestQueue jatimQueue;
-    private RecyclerView jatimRecyclerView;
-    private JatimAdapter jatimAdapter;
-    private RecyclerView.LayoutManager jatimLayoutManager;
+public class KasusJember extends AppCompatActivity {
+    private RequestQueue jemberQueue;
+    private RecyclerView jemberRecyclerView;
+    private JemberAdapter jemberAdapter;
+    private RecyclerView.LayoutManager jemberLayoutManager;
     ProgressDialog progressDialog;
-    ArrayList<JatimItem> jatimList = new ArrayList<>();
+    ArrayList<JemberItem> jemberList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kasus_jatim);
+        setContentView(R.layout.activity_kasus_jember);
 
-        progressDialog = new ProgressDialog(KasusJatim.this);
+        progressDialog = new ProgressDialog(KasusJember.this);
 
         getSupportActionBar().setTitle("Data Jawa Timur");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        jatimQueue = Volley.newRequestQueue(this);
+        jemberQueue = Volley.newRequestQueue(this);
 
-        jatimParse();
+        jemberParse();
     }
 
-    private void jatimParse() {
+    private void jemberParse() {
         progressDialog.setMessage("Updating data.....");
         progressDialog.setCancelable(true);
         progressDialog.show();
 
-        String url = "https://nadasthing.000webhostapp.com/";
+        String url = "https://nadasthing.000webhostapp.com/jember.php";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 progressDialog.cancel();
                 try {
-                    ArrayList<JatimItem> jatimList = new ArrayList<>();
+                    ArrayList<JemberItem> jemberList = new ArrayList<>();
 
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject object = response.getJSONObject(i);
 
-                        String namaKota = object.getString("kota");
-                        String update = object.getString("updated_at");
-                        String positf = object.getString("confirm");
+                        String namaKecamatan = object.getString("kecamatan");
+                        String positif = object.getString("positif");
                         String odr = object.getString("odr");
-                        String otg = object.getString("otg");
                         String odp = object.getString("odp");
                         String pdp = object.getString("pdp");
 
-                        jatimList.add(new JatimItem(namaKota, update, positf, odr, otg, odp, pdp));
+                        jemberList.add(new JemberItem(namaKecamatan, positif, odr, odp, pdp));
                     }
 
-                    jatimRecyclerView = findViewById(R.id.recyclerJatim);
-                    jatimRecyclerView.setHasFixedSize(true);
-                    jatimLayoutManager = new LinearLayoutManager(getApplicationContext());
-                    jatimAdapter = new JatimAdapter(jatimList);
+                    jemberRecyclerView = findViewById(R.id.recyclerJember);
+                    jemberRecyclerView.setHasFixedSize(true);
+                    jemberLayoutManager = new LinearLayoutManager(getApplicationContext());
+                    jemberAdapter = new JemberAdapter(jemberList);
 
-                    jatimRecyclerView.setLayoutManager(jatimLayoutManager);
-                    jatimRecyclerView.setAdapter(jatimAdapter);
+                    jemberRecyclerView.setLayoutManager(jemberLayoutManager);
+                    jemberRecyclerView.setAdapter(jemberAdapter);
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -90,6 +88,6 @@ public class KasusJatim extends AppCompatActivity {
             }
         });
 
-        jatimQueue.add(jsonArrayRequest);
+        jemberQueue.add(jsonArrayRequest);
     }
 }

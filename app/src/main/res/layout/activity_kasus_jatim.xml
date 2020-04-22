@@ -30,6 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/topTittle"
-        tools:listitem="@layout/item_kasus" />
+        tools:listitem="@layout/item_kasus_jatim" />
 
 </RelativeLayout>

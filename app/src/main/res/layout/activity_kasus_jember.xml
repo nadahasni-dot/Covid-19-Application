@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KasusJatimSalah">
+    tools:context=".jatim.KasusJatim">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/topTittle"
@@ -19,17 +19,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/semibold"
-            android:text="@string/liva_data_jawa_timur"
+            android:text="@string/live_data_kabupaten_jember"
             android:textColor="@color/colorPrimary"
             android:textSize="12sp" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerJatim"
+        android:id="@+id/recyclerJember"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/topTittle"
-        tools:listitem="@layout/item_kasus" />
+        tools:listitem="@layout/item_kasus_jember" />
 
 </RelativeLayout>

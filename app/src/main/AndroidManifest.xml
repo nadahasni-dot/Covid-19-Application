@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".KasusJatimSalah"
+            android:name=".jember.KasusJember"
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"

@@ -21,6 +21,13 @@
     <string name="icon_positif">Icon Positif</string>
     <string name="icon_meninggal">Icon Meninggal</string>
     <string name="chevron_right">Chevron Right</string>
+    <string name="daftar_kasus_kab_jember">Daftar Kasus Kab. Jember</string>
+    <string name="odr">ODR</string>
+    <string name="otg">OTG</string>
+    <string name="odp">ODP</string>
+    <string name="pdp">PDP</string>
+    <string name="positif">POSITIF</string>
+    <string name="live_data_kabupaten_jember">Live Data Kabupaten Jember</string>
 
     <string-array name="spinner_country">
         <item>Indonesia</item>
